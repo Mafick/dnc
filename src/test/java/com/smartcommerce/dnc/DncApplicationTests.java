@@ -5,6 +5,8 @@ import com.commercetools.api.models.project.Project;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.smartcommerce.dnc.commercetools.Client;
+
 @SpringBootTest
 class DncApplicationTests {
 
