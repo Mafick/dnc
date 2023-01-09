@@ -1,4 +1,4 @@
-package com.smartcommerce.dnc.commercetools;
+package com.smartcommerce.dnc;
 
 // Required imports
 
