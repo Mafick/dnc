@@ -5,14 +5,14 @@ import com.commercetools.api.models.project.Project;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.smartcommerce.dnc.commercetools.Client;
+import com.smartcommerce.dnc.client.CommercetoolsClient;
 
 @SpringBootTest
 class DncApplicationTests {
 
 	@Test
 	void contextLoads() {
-		ProjectApiRoot apiRoot = Client.createApiClient();
+		ProjectApiRoot apiRoot = CommercetoolsClient.createApiClient();
 
 		Project myProject = apiRoot
 				.get()

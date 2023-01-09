@@ -1,4 +1,4 @@
-package com.smartcommerce.dnc.commercetools;
+package com.smartcommerce.dnc.client;
 
 // Required imports
 
@@ -6,8 +6,10 @@ import com.commercetools.api.client.ProjectApiRoot;
 import com.commercetools.api.defaultconfig.ApiRootBuilder;
 import com.commercetools.api.defaultconfig.ServiceRegion;
 import io.vrap.rmf.base.client.oauth2.ClientCredentials;
+import org.springframework.stereotype.Component;
 
-public class Client {
+@Component
+public class CommercetoolsClient {
 
 	public static ProjectApiRoot createApiClient() {
 
