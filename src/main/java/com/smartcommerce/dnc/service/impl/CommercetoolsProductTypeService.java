@@ -15,7 +15,7 @@ public class CommercetoolsProductTypeService implements ProductTypeService {
 
 	@Override
 	public List<ProductType> getAllProductTypes() {
-		ProjectApiRoot apiRoot = CommercetoolsClient.createApiClient();
+		ProjectApiRoot apiRoot = CommercetoolsClient.createStaticApiClient();
 
 		// Get the new ProductType
 		ProductTypePagedQueryResponse allProductTypes = apiRoot

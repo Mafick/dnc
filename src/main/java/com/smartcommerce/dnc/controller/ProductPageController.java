@@ -29,7 +29,7 @@ public class ProductPageController {
 		System.out.println("--- NEW PRODUCT ---");
 		System.out.println(productData);
 
-		productService.createProduct(productData.getName(), productData.getDescription());
+		productService.createProduct(productData.getName(), productData.getDescription(), productData.getKey());
 
 		return CtrlConst.REDIRECT + CtrlConst.PRODUCT_URL;
 	}

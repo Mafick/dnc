@@ -6,6 +6,6 @@ import lombok.Data;
 public class ProductData {
 
 	private String name;
-
 	private String description;
+	private Integer key;
 }
