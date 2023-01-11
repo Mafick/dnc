@@ -7,5 +7,5 @@ public class ProductData {
 
 	private String name;
 	private String description;
-	private Integer key;
+	private String key;
 }
