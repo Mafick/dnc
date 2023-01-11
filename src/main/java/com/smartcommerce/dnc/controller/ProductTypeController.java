@@ -12,7 +12,7 @@ import com.smartcommerce.dnc.constant.CtrlConst;
 import com.smartcommerce.dnc.service.ProductTypeService;
 
 @Controller
-public class ProductTypeController {
+public class ProductTypeController extends AbstractPageController {
 
 	private final ProductTypeService productTypeService;
 

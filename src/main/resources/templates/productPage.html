@@ -74,7 +74,27 @@
 	</div>
 
 	<div class="align-content-start">
+		<table id="productDataTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+			<thead>
+			<tr class="text-nowrap">
+				<th>getId</th>
+				<th>getKey</th>
+				<th>getName</th>
+				<th>getDescription</th>
+				<th>getSlug</th>
+			</tr>
+			</thead>
+			<th:block th:each="product : ${allProducts}">
+				<tr class="text-nowrap">
+					<td th:text="${product.getId()}"></td>
+					<td th:text="${product.getKey()}"></td>
+					<td th:text="${product.getMasterData().getCurrent().getName().get('DE-DE')}"></td>
+					<td th:text="${product.getMasterData().getCurrent().getDescription().get('DE-DE')}"></td>
+					<td th:text="${product.getMasterData().getCurrent().getSlug().get('DE-DE')}"></td>
+				</tr>
+			</th:block>
 
+		</table>
 
 	</div>
 

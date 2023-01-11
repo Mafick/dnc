@@ -24,7 +24,7 @@ public class CommercetoolsProductService implements ProductService {
 	}
 
 	@Override
-	public void createProduct(String name, String description, Integer key) {
+	public void createProduct(String name, String description, Integer slug) {
 		ProjectApiRoot apiRoot = commercetoolsClient.createApiClient();
 
 		// Create Product
@@ -38,8 +38,8 @@ public class CommercetoolsProductService implements ProductService {
 				.productType(typeBuilder -> typeBuilder.id("5da6ed0e-ef5a-4a1f-86ea-c3ab57556531"))
 				.slug(stringBuilder ->
 						stringBuilder
-								.addValue(LOC_EN, String.format("%s-%s", key, LOC_EN))
-								.addValue(LOC_DE, String.format("%s-%s", key, LOC_DE))
+								.addValue(LOC_EN, String.format("%s-%s", slug, LOC_EN))
+								.addValue(LOC_DE, String.format("%s-%s", slug, LOC_DE))
 				)
 				.description(stringBuilder ->
 						stringBuilder

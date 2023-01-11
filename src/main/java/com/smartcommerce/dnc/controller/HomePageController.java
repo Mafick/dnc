@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.smartcommerce.dnc.constant.CtrlConst;
 
 @Controller
-public class HomePageController {
+public class HomePageController extends AbstractPageController {
 
 	@RequestMapping(value = CtrlConst.HOME_URL, method = RequestMethod.GET)
 	public String homePage() {

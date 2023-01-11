@@ -14,7 +14,7 @@ import com.smartcommerce.dnc.data.ProductData;
 import com.smartcommerce.dnc.service.ProductService;
 
 @Controller
-public class ProductPageController {
+public class ProductPageController extends AbstractPageController {
 
 	private final ProductService productService;
 
