@@ -73,4 +73,17 @@ public class CommercetoolsProductService implements ProductService {
 
 		return allProducts.getResults();
 	}
+
+	@Override
+	public void deleteProduct(String id, String version) {
+		ProjectApiRoot apiRoot = commercetoolsClient.createApiClient();
+
+		apiRoot
+				.products()
+				.withId(id)
+				.delete()
+				.withVersion(version)
+				.executeBlocking()
+				.getBody();
+	}
 }

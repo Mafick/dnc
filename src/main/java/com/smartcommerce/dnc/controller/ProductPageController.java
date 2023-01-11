@@ -4,6 +4,7 @@ import com.commercetools.api.models.product.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,10 +35,21 @@ public class ProductPageController extends AbstractPageController {
 
 	@RequestMapping(value = CtrlConst.PRODUCT_URL, method = RequestMethod.POST)
 	public String createProduct(@ModelAttribute("productData") ProductData productData) {
-		System.out.println("--- NEW PRODUCT ---");
+		System.out.println("--- CREATE PRODUCT ---");
 		System.out.println(productData);
 
 		productService.createProduct(productData.getName(), productData.getDescription(), productData.getKey());
+
+		return CtrlConst.REDIRECT + CtrlConst.PRODUCT_URL;
+	}
+
+	@RequestMapping(value = CtrlConst.PRODUCT_DELETE_URL + "{id}/{version}", method = RequestMethod.POST)
+	public String deleteProduct(@PathVariable("id") String id, @PathVariable("version") String version) {
+		System.out.println("--- DELETE PRODUCT ---");
+		System.out.println("ID: " + id);
+		System.out.println("Version: " + version);
+
+		productService.deleteProduct(id, version);
 
 		return CtrlConst.REDIRECT + CtrlConst.PRODUCT_URL;
 	}

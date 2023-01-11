@@ -5,6 +5,7 @@ public class CtrlConst {
 	// urls
 	public static final String HOME_URL = "/";
 	public static final String PRODUCT_URL = "/product";
+	public static final String PRODUCT_DELETE_URL = "/product/delete/";
 	public static final String PRODUCT_TYPE_URL = "/producttype";
 
 
