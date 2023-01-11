@@ -1,6 +1,12 @@
 package com.smartcommerce.dnc.service;
 
+import com.commercetools.api.models.product.Product;
+
+import java.util.List;
+
 public interface ProductService {
 
 	void createProduct(String name, String description, Integer key);
+
+	List<Product> getAllProducts();
 }

@@ -3,7 +3,10 @@ package com.smartcommerce.dnc.service.impl;
 import com.commercetools.api.client.ProjectApiRoot;
 import com.commercetools.api.models.product.Product;
 import com.commercetools.api.models.product.ProductDraft;
+import com.commercetools.api.models.product.ProductPagedQueryResponse;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 import com.smartcommerce.dnc.client.CommercetoolsClient;
 import com.smartcommerce.dnc.service.ProductService;
@@ -55,6 +58,18 @@ public class CommercetoolsProductService implements ProductService {
 		// Output the Product ID
 		String productID = product.getId();
 		System.out.println(productID);
+	}
 
+	@Override
+	public List<Product> getAllProducts() {
+		ProjectApiRoot apiRoot = commercetoolsClient.createApiClient();
+
+		ProductPagedQueryResponse allProducts = apiRoot
+				.products()
+				.get()
+				.executeBlocking()
+				.getBody();
+
+		return allProducts.getResults();
 	}
 }

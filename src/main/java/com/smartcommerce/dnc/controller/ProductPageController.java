@@ -1,9 +1,13 @@
 package com.smartcommerce.dnc.controller;
 
+import com.commercetools.api.models.product.Product;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 import com.smartcommerce.dnc.constant.CtrlConst;
 import com.smartcommerce.dnc.data.ProductData;
@@ -19,7 +23,11 @@ public class ProductPageController {
 	}
 
 	@RequestMapping(value = CtrlConst.PRODUCT_URL, method = RequestMethod.GET)
-	public String productPage() {
+	public String productPage(Model model) {
+
+		List<Product> allProducts = productService.getAllProducts();
+		model.addAttribute("allProducts", allProducts);
+
 		return CtrlConst.PRODUCT_PAGE;
 	}
 
